@@ -6,8 +6,12 @@ const Schema = use('Schema')
 class BillSchema extends Schema {
   up () {
     this.create('bills', (table) => {
-      table.increments()
-      table.timestamps()
+      table.increments();
+
+      table.string();
+      table.string('billing_date');
+
+      table.timestamps();
     })
   }
 

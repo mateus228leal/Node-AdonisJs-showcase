@@ -40,6 +40,10 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
+  bills() {
+    return this.hasMany('App/Models/Bill');
+  }
+
   static get createdAtColumn () {
     return null;
   }
