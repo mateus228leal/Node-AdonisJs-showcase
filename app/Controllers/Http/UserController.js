@@ -12,48 +12,6 @@ class UserController {
     this.userService = new UserService();
   }
 
-  /**
-   * @swagger
-   * /user/create:
-   *   post:
-   *      tags:
-   *        - User
-   *      summary: Criação de usuário
-   *      parameters:
-   *          - name: name
-   *          description: Dados iniciais para criação de conta do usuário
-   *          in: body
-   *          required: true
-   *          type: string
-   *          schema:
-   *            type: object
-   *            required:
-   *              - name
-   *              - email
-   *              - cellPhoneNumber
-   *              - password
-   *            properties:
-   *              name:
-   *                type: string
-   *                description: Nome do usuário
-   *              email:
-   *                type: string
-   *                description: Email (valido) do usuário
-   *              cellPhoneNumber:
-   *                type: string
-   *                description: Número de celular do usuário
-   *              password:
-   *                type: string
-   *                description: Nome do usuário
-   *      produces:
-   *        - application/json
-   *      responses:
-   *        200:
-   *          description: Usuário criado com sucesso.
-   *        422:
-   *          description: Falha em validação de algum dos campos
-   * 
-   */
   async postCreate({ request, response }) {
     const data = request.only(['name', 'email', 'cellPhoneNumber', 'password']);
 

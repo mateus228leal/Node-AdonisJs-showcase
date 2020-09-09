@@ -24,7 +24,7 @@ Route.group(() => {
 }).prefix('user');
 
 Route.group(() => {
-
+  Route.post('create', 'BillController.postCreate');
 }).prefix('bills');
 
 Route.group(() => {
